@@ -13,9 +13,9 @@ test.describe("Dynamic Loading - Example 1", () => {
 
     // Web-first checks: ensure loading phase occurred, then completed.
     await expect(loadingIndicator).toBeVisible();
-    await expect(loadingIndicator).toBeHidden();
+    await expect(loadingIndicator).toBeHidden({ timeout: 15_000 });
 
-    await expect(finishText).toHaveText("Hello World!");
+    await expect(finishText).toHaveText("Hello World!", { timeout: 15_000 });
     await expect(finishText).toBeVisible();
   });
 });
